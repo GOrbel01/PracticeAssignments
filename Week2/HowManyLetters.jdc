@@ -1,0 +1,15 @@
+println("Enter a Sentence");
+String str1 = System.console().readLine();
+int count = 0;
+
+println("Enter which letter to search for");
+String let1 = System.console().readLine();
+
+for (int i = 0; i < str1.length(); i++)
+{
+	if (str1.substring(i, i+1).equals(let1))
+	{
+		count++;
+	}
+}
+println("Total Cases of " + let1 + ": " + count);

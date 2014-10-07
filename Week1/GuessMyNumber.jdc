@@ -1,0 +1,36 @@
+double rand = Math.abs(1000 * Math.random());
+int numberToGuess = (int) rand;
+boolean isCorrect = false;
+int guess = 0;
+int count = 0;
+
+while (!isCorrect)
+{
+	if (count == 0)
+	{
+	println("Try to Guess the Number");
+	}
+	else
+	{
+	println("What is your Next Guess");
+	}
+	String str = System.console().readLine();
+	guess = Integer.parseInt(str);
+	count++;
+	if (guess > numberToGuess)
+	{
+		println("Number to High!");
+		println("Try Again");
+	}
+	else if (guess < numberToGuess)
+	{
+		println("Number to Low!");
+		println("Try Again");
+	}
+	else
+	{
+		println("COREECT!");
+		println("You needed " + count + " guesses.");
+		isCorrect = true;
+	}	
+}

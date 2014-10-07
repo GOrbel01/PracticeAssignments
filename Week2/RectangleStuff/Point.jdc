@@ -1,0 +1,14 @@
+        class Point {
+            double x;
+            double y;
+            
+            public void setX(double a)
+            {
+                x = a;
+            }
+            
+            public void setY(double b)
+            {
+                y = b;
+            }
+        }

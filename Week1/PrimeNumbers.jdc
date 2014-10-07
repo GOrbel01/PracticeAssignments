@@ -1,0 +1,21 @@
+int numTemp = 2;
+int num = 1;
+println("Printing Prime Numbers to 1000");
+
+println(num);
+num++;
+println(num);
+
+while (num < 1000)
+{
+	numTemp = 2;
+	while (numTemp < num)
+	{
+		if (num % numTemp >= 1 && numTemp == num-1)
+		{
+		   println(num);
+		}
+		numTemp++;
+	}
+	num++;
+}

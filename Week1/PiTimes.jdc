@@ -1,0 +1,32 @@
+double p = 4;
+double d = 1;
+double total = 0;
+long count = 1;
+println("Enter how many Terms");
+String str = System.console().readLine();
+long times = Long.parseLong(str);
+
+
+while (count <= times)
+{		
+	if (count % 2 == 0)
+	{
+		total = total - p/d;
+	}
+	else
+	{
+		total = total + p/d;
+	}
+	count = count + 1;
+	// println("n:" + p + " d:" + d + " p/d:" + p/d + " - " + total);
+	if (count % 10000000 == 0) {
+		println("Iteration " + count + ": " + total);
+	}
+	if ((total < 3.14159265359) && (total > 3.14159265357))
+	{
+		println("Congrats, First 10 Digits in " + (count-1) + " Tries.");
+		println("Terminating!");
+		count = times + 1;
+	}
+	d = d + 2;
+}

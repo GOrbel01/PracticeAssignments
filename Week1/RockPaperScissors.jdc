@@ -1,0 +1,63 @@
+int pl1Score = 0;
+int pl2Score = 0;
+
+while (pl1Score - pl2Score < 3 && pl2Score - pl1Score < 3)
+{
+	println("Players Choose R, P or S One after the Other, e.g. PP, RP etc.");	
+	String result = System.console().readLine();
+	
+	String p1Choice = result.substring(0, 1);
+	String p2Choice = result.substring(1, 2);
+	
+	if (p1Choice.equalsIgnoreCase("P") && p2Choice.equalsIgnoreCase("P"))
+	{
+		println("Tie, No Points");
+	}
+	if (p1Choice.equalsIgnoreCase("P") && p2Choice.equalsIgnoreCase("R"))
+	{
+		println("Round to Player 1!");
+		pl1Score++;
+	}
+	if (p1Choice.equalsIgnoreCase("P") && p2Choice.equalsIgnoreCase("S"))
+	{
+		println("Round to Player 2!");
+		pl2Score++;
+	}
+	if (p1Choice.equalsIgnoreCase("R") && p2Choice.equalsIgnoreCase("P"))
+	{
+		println("Round to Player 2!");
+		pl2Score++;
+	}
+	if (p1Choice.equalsIgnoreCase("R") && p2Choice.equalsIgnoreCase("R"))
+	{
+		println("Tie, No Points");
+	}
+	if (p1Choice.equalsIgnoreCase("R") && p2Choice.equalsIgnoreCase("S"))
+	{
+		println("Round to Player 1!");
+		pl1Score++;
+	}
+	if (p1Choice.equalsIgnoreCase("S") && p2Choice.equalsIgnoreCase("P"))
+	{
+		println("Round to Player 1!");
+		pl1Score++;
+	}
+	if (p1Choice.equalsIgnoreCase("S") && p2Choice.equalsIgnoreCase("R"))
+	{
+		println("Round to Player 2!");
+		pl2Score++;
+	}
+	if (p1Choice.equalsIgnoreCase("S") && p2Choice.equalsIgnoreCase("S"))
+	{
+		println("Tie, No Points");
+	}	
+	println("Scores are Now Player 1: " + pl1Score + " Player 2: " + pl2Score);
+}
+if (pl1Score > pl2Score)
+{
+	println("Player 1 Has gone more than three games ahead this means He/She Wins!");
+}
+if (pl2Score > pl1Score)
+{
+	println("Player 2 Has gone more than three games ahead this means He/She Wins!");
+}

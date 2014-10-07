@@ -1,0 +1,9 @@
+println("Enter a Sentence");
+println();
+String str1 = System.console().readLine();
+
+for (int i = 0; i < str1.length(); i++)
+{
+	String temp = str1.substring(i, i+1);
+	println(temp);
+}

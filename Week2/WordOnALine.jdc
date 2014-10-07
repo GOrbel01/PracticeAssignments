@@ -1,0 +1,16 @@
+println("Enter a Sentence");
+println();
+String str1 = System.console().readLine();
+int spaces = str1.indexOf(" ");
+println(str1.substring(0, spaces));
+int next = str1.indexOf(" ", spaces+1);
+for (int i = spaces; i < str1.length(); i++)
+{		
+	String temp = str1.substring(spaces, spaces+1);	
+	if (str1.substring(i, i+1).equals(" "))
+	{
+		println(temp);
+		next = str1.indexOf(" ", spaces+1);
+	}
+	
+}

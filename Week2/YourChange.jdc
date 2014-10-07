@@ -1,0 +1,53 @@
+println("How much was your Total Purchase?");
+double totalPurchase = Double.parseDouble(System.console().readLine());
+
+println("How much did you Pay?");
+double payment = Double.parseDouble(System.console().readLine());
+
+double change = payment - totalPurchase;
+double changeTemp = change;
+
+int fiftyNote = 0;
+int twentyNote= 0;
+int tenNote = 0;
+int fiveNote = 0;
+int twoCoin = 0;
+int oneCoin = 0;
+int fiftyCoin = 0;
+int twentyCoin = 0;
+int tenCoin = 0;
+int fiveCoin = 0;
+int twopCoin = 0;
+int onepCoin = 0;
+
+while (changeTemp > 0)
+{
+	if (changeTemp - 50 > 0)
+	{
+		fiftyNote++;
+	}
+	if (changeTemp - 20 > 0 && !(changeTemp - 50 > 0))
+	{
+		twentyNote++;		
+	}
+	if (changeTemp - 10 > 0 && !(changeTemp - 20 > 0))
+	{
+		tenNote++;
+	}
+	if (changeTemp - 5 > 0 && !(changeTemp - 5 > 0))
+	{
+		fiveNote++;
+	}
+	if (changeTemp - 2 > 0)
+	{
+		twoCoin++;
+	}
+	if (changeTemp - 1 > 0)
+	{
+		oneCoin++;
+	}
+	if (changeTemp - 0.50 > 0)
+	{
+		fiftyCoin++;
+	}
+}

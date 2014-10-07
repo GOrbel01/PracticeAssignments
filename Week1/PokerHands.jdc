@@ -1,0 +1,102 @@
+int cardNumber = 1;
+
+String suit1 = "";
+int rank1 = 0;
+
+String suit2 = "";
+int rank2 = 0;
+
+String suit3 = "";
+int rank3 = 0;
+
+String suit4 = "";
+int rank4 = 0;
+
+String suit5 = "";
+int rank5 = 0;
+
+while (cardNumber < 5)
+{
+	String suit;
+	String str1;
+	int rank = 1;
+	println("Enter a Suit for Card " + cardNumber + ":");
+	suit = System.console().readLine();
+	while (!(suit.equals("Hearts") || suit.equals("Diamonds") || suit.equals("Spades") || suit.equals("Clubs")))
+	{
+	    println("Enter a Suit:");
+	    suit = System.console().readLine();
+	}
+	println("Enter a Rank for Card " + cardNumber + ":");
+	str1 = System.console().readLine();
+
+	while (!(str1.equals("1") || str1.equals("2") || str1.equals("3") || str1.equals("4") || str1.equals("5") || str1.equals("6") || str1.equals("7") || str1.equals("8") || str1.equals("9") || str1.equals("10") || str1.equals("Jack") || str1.equals("Queen") || str1.equals("King")))
+	{
+			println("Enter a Rank for Card " + cardNumber + ":");
+			str1 = System.console().readLine();
+	
+	}	
+	if (str1.equals("Jack"))
+	{
+		rank = 11;
+	}
+	else if (str1.equals("Queen"))
+	{
+		rank = 12;
+	}
+	else if (str1.equals("King"))
+	{
+		rank = 13;
+	}
+	else
+	{
+	rank = Integer.parseInt(str1);
+	}
+	if (cardNumber == 1)
+	{
+		suit1 = suit;
+		rank1 = rank;
+	}
+	if (cardNumber == 2)
+	{
+		suit2 = suit;
+		rank2 = rank;
+	}	
+	if (cardNumber == 3)
+	{
+		suit3 = suit;
+		rank3 = rank;
+	}
+	if (cardNumber == 4)
+	{
+		suit4 = suit;
+		rank4 = rank;
+	}
+	if (cardNumber == 5)
+	{
+		suit5 = suit;
+		rank5 = rank;
+	}
+	
+	cardNumber++;
+}
+
+println("Card Entry Complete...");
+
+int r1 = 0;
+int r2 = 0;
+int r3 = 0;
+int r4 = 0;
+int r5 = 0;
+
+if (rank1 > rank2 && rank1 > rank3 && rank1 > rank4 && rank1 > rank5)
+{
+	r5 = rank1;
+	if (rank2 > rank 3 && rank2 
+}
+
+if (suit1.equals(suit2) && suit1.equals(suit3) && suit1.equals(suit4))
+{
+	if (rank 5
+	println("Your Best Hand is a Straight Flush!");
+}

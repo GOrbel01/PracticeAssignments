@@ -1,0 +1,4 @@
+println("How much was your Total Purchase");
+double totalPurchase = Double.parseDouble(System.console().readLine())
+
+println(totalPurchase);

@@ -1,0 +1,25 @@
+println("Enter a Short Sentence to search for");
+String shortString = System.console().readLine();
+
+println("Now enter the sentence to search through");
+String longerString = System.console().readLine();
+
+int count = 0;
+int matchCount = 0;
+
+for (int i = 0; i < longerString.length(); i++)
+{
+	count = 0;
+	for (int j = 0; j < shorterString.length(); j++)
+	{		
+		int temp = i + j;
+		if (longerString.charAt(temp) == shorterString.charAt(j))
+		{
+			count++;
+		}		
+	}
+	if (count >= shorterString.length())
+	{
+		matchCount++;
+	}
+}

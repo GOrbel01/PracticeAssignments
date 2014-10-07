@@ -1,0 +1,72 @@
+println("Please Enter a Number");
+String str = System.console().readLine();
+
+int number = Integer.parseInt(str);
+int counter = 0;
+int i;
+int n;
+
+boolean numberFound = false;
+boolean lowerFound = false;
+boolean upperFound = false;
+
+int primeLower = 0;
+int primeUpper = 0;
+
+while (!numberFound)
+{
+	for (i = number; !lowerFound; i--)
+	{
+		counter = 0;
+		for (n = 2; n < i; n++)
+		{
+			if (i % n == 0)
+			{
+				counter++;
+			}
+		}
+		
+		if (counter == 0)
+		{
+			primeLower = i;
+			lowerFound = true;
+		}
+	}
+	for (i = number; !upperFound; i++)
+	{
+		counter = 0;
+		for (n = 2; n < i; n++)
+		{
+			if (i % n == 0)
+			{
+				counter++;
+			}
+		}
+		if (counter == 0)
+		{
+		primeUpper = i;
+		upperFound = true;
+		}	
+	}
+	println("Upper " + primeUpper);
+	println("Lower " + primeLower);
+	
+	if (number - primeLower > primeUpper - number)
+	{
+		println("The Upper Prime Number " + primeUpper + " is Closer with a Distance of " + (primeUpper - number) + " From the Chosen Number");
+		numberFound = true;
+	}
+	else if (number - primeLower < primeUpper - number)
+	{
+		println("The Lower Prime Number " + primeLower + " is Closer with a Distance of " + (number - primeLower) + " From the Chosen Number");
+		numberFound = true;
+	}
+	else
+	{
+		println("Prime Numbers are Equidistant from the Chosen Number");
+		println("With both having a Distance of " + (number - primeLower) + " From the Chosen Number");
+		println("Lower " + primeLower);
+		println("Upper " + primeUpper);
+		numberFound = true;
+	}
+}
