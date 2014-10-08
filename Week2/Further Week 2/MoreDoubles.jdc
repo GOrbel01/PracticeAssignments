@@ -1,0 +1,33 @@
+println("Enter Total Borrowed");
+double borrwed = Double.parseDouble(System.console().readLine());
+println("Enter Number of Years to pay back");
+int numberOfYears = Integer.parseInt(System.console().readLine());
+println("Enter Interest Rate (Fixed)");
+int interestRate = Integer.parseInt(System.console().readLine());
+
+double totalCost = getTotalAmount(borrowed, interestRate);
+double mperYear = getMoneyPerYear(numberOfYears, total);
+
+double getTotalAmount(int cost, int rate)
+{
+	double restul = 0.0;
+	result = cost*(1+(rate/100));
+	
+	return result;
+}
+
+double getMoneyPerYear(int years, double total)
+{
+	double result = 0.0;
+	result = (total/years);
+}
+
+double getYearsUntilIntestPaid(double total, double cost, int years, double moneyPerYear)
+{
+	double result = 0.0;
+	while (total - moneyPerYear > cost)
+	{
+		result = result + 1;
+	}
+	return result;
+}
