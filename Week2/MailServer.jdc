@@ -1,0 +1,114 @@
+boolean done = false;
+boolean validCommandEntered = false;
+boolean isValid = false;
+int progress = 0;
+MailInfo mail = new MailInfo();
+
+while (!done)
+{
+        isValid = false;
+        println("Commands: MAIL FROM, RCPT FROM, DATA, QUIT");
+        print(">>>");
+        String command = System.console().readLine();
+        if (command.equalsIgnoreCase("QUIT"))
+        {           
+            done = true;
+        }
+        if ((command.equalsIgnoreCase("MAIL FROM")) || (command.equalsIgnoreCase("RCPT FROM") && progress >= 1))
+        {
+            while (!isValid)
+            {
+                print(">>> " + command + ":");
+                if (command.equalsIgnoreCase("MAIL FROM"))
+                {
+                    mail.mailFrom = System.console().readLine();
+                    if (mail.mailFrom.contains("@"))
+                    {
+                        if (!(mail.mailFrom.substring(0, 1).equals("@") || mail.mailFrom.substring(mail.mailFrom.length()-1).equals("@")))
+                        {
+                            println("OK");
+                            isValid = true;
+                        }
+                        else
+                        {
+                            println("Invalid Email Address");
+                        }
+                    }
+                    else
+                    {
+                        println("Invalid Email Address");
+                    }
+                    if (progress == 0 && isValid == true)
+                    {
+                        progress++;
+                    }
+                }
+                
+                else if (command.equalsIgnoreCase("RCPT FROM"))
+                {
+                    mail.rcptFrom = System.console().readLine();
+                    if (mail.rcptFrom.contains("@"))
+                    {
+                        if (!(mail.rcptFrom.substring(0, 1).equals("@") || mail.rcptFrom.substring(mail.rcptFrom.length()-1).equals("@")))
+                        {
+                            println("OK");
+                            isValid = true;
+                        }
+                        else
+                        {
+                            println("Invalid Email Address");
+                        }
+                    }
+                    else
+                    {
+                        println("Invalid Email Address");
+                    }
+                    if (progress == 1 && isValid == true)
+                    {
+                        progress++;
+                    }    
+                }
+            }
+        }
+        else if  ((command.equalsIgnoreCase("DATA") && progress >= 2))
+        {
+            print(">>> " + command + ":");
+            println();
+            String tempMail = "";               
+            while (!(tempMail.equals(".")))
+            {
+                tempMail = System.console().readLine();
+                if (!tempMail.equals("."))
+                {
+                    if (!mail.emailContents.equals(""))
+                    {
+                        mail.emailContents = mail.emailContents + "\n" + tempMail;
+                    }
+                    else
+                    {
+                        mail.emailContents = mail.emailContents + tempMail;
+                    }
+                }
+            }                    
+            println("Sending Email...");
+            println("From: " + mail.mailFrom);
+            println("To: " + mail.rcptFrom);
+            println(mail.emailContents);
+            println("...Done");           
+        }
+        else
+        {
+            if (!(command.equalsIgnoreCase("QUIT")))
+            {
+                println("Invalid Command");
+            }
+        }
+}
+println("Bye!");
+
+class MailInfo
+{
+    String rcptFrom = "";
+    String mailFrom = "";
+    String emailContents = "";
+}
