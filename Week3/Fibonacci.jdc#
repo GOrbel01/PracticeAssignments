@@ -1,0 +1,14 @@
+
+
+int fibonnaci(int n)
+{
+	if (n==1 | n==2)
+	{
+		return 1;
+	}
+	else
+	{
+		int result = fibonaci(n-1) + fibonaci(n-2);
+		return fibonnaci(n
+	}
+}

@@ -1,0 +1,18 @@
+println(fibonnaci(3, 0));
+
+int fibonnaci(int n, int m)
+{
+	m++;
+	if (n==1 | n==2)
+	{
+		return 1;
+	}
+	else
+	{
+		int result = fibonnaci(n-1, m) + fibonnaci(n-2, m);
+		println("Method Count: " + m);
+		println(n-1);
+		println(n-2);
+		return result;		
+	}
+}

@@ -1,0 +1,14 @@
+println("How many Discs?");
+double n = Double.parseDouble(System.console().readLine());
+println(playHanoi(n));
+
+double playHanoi(double n)
+{
+	if (n == 1)
+	{
+		return 1;
+	}
+	double result = playHanoi(n-1) + 1 + playHanoi(n-1);
+	println(result);
+	return result;
+}
