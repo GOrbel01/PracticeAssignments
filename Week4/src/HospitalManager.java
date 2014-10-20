@@ -39,14 +39,16 @@ public class HospitalManager {
 
         System.out.println("Now Deleting Stuff from List\n");
 
-        deletePatient(p1);
+        deletePatient(p3);
+
+        getLengthOfList();
 
         printLinkedList();
     }
 
     public void getLengthOfList()
     {
-        System.out.println("Length of List: " + patientListStart.listLengthRecursive());
+        System.out.println("Length of List: " + patientListStart.listLength() + "\n");
     }
 
     public void deletePatient(Patient patient)

@@ -31,18 +31,15 @@ public class Patient {
     {
         if (this.nextPatient == null)
         {
-            System.out.println("I am in this Loop");
             return false;
         }
         else if (this.nextPatient.name.equals(patient.name))
         {
-            System.out.println("I am in an awesome Loop");
             this.nextPatient = nextPatient.nextPatient;
             return true;
         }
         else
         {
-            System.out.println("I am in this sucky Loop");
             return this.nextPatient.deletePatient(patient);
         }
     }
@@ -59,39 +56,18 @@ public class Patient {
         }
     }
 
-    public int listLengthRecursive()
-    {
-        int count = 0;
-        if (this.nextPatient == null)
-        {
-            count++;
-            return count;
-        }
-        else
-        {
-            nextPatient.listLengthRecursive();
-        }
-        return count;
-    }
-
     public int listLength()
     {
-        boolean done = false;
-        Patient pIndex = this.nextPatient;
         int count = 0;
-        while (!done)
+        Patient aux = this;
+        while (aux.nextPatient != null)
         {
-            if (this.nextPatient != null)
-            {
-                System.out.println("Always Here");
-                count = count + 1;
-            }
-            if (this.nextPatient == null)
-            {
-                System.out.println("Never ReachMe");
-                count = count + 1;
-                done = true;
-            }
+            aux = aux.nextPatient;
+            count++;
+        }
+        if (aux.nextPatient == null)
+        {
+            count++;
         }
         return count;
     }
