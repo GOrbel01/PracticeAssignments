@@ -22,7 +22,7 @@ public class MarkChecker {
         {
             System.out.println("Enter a Test Result of 1-100");
             theMark = keyboard.nextInt();
-            checkResult(new Result(theMark));
+            checkResult(theMark);
         }
         while (theMark != -1);
 
@@ -30,17 +30,17 @@ public class MarkChecker {
 
     }
 
-    public void checkResult(Result r)
+    public void checkResult(int result)
     {
-        if (r.getMark() > 0 && r.getMark() <= 49)
+        if (result > 0 && result <= 49)
         {
             markTotals[0] = markTotals[0] + 1;
         }
-        else if (r.getMark() > 49 && r.getMark() <= 69)
+        else if (result > 49 && result <= 69)
         {
             markTotals[1] = markTotals[1] + 1;
         }
-        if (r.getMark() > 69 && r.getMark() <= 100)
+        if (result > 69 && result <= 100)
         {
             markTotals[2] = markTotals[2] + 1;
         }
