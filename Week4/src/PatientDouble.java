@@ -14,22 +14,23 @@ public class PatientDouble {
         this.age = age;
         this.illness = illness;
         this.nextPatientDouble = null;
+        this.previousPatientDouble = null;
     }
 
     public void addPatientDouble(PatientDouble newPatientDouble)
     {
-        if (this.previousPatientDouble == null && this.nextPatientDouble != null)
+        if (this.nextPatientDouble == null)
         {
-//            this.previousPatientDouble =
-        }
-        else if (this.previousPatientDouble == null && this.nextPatientDouble == null)
-        {
+//            if (this.previousPatientDouble == null)
+//            {
+                newPatientDouble.previousPatientDouble = this;
+//            }
             this.nextPatientDouble = newPatientDouble;
         }
         else
         {
-
             this.nextPatientDouble.addPatientDouble(newPatientDouble);
+//            this.previousPatientDouble = newPatientDouble.previousPatientDouble;
         }
     }
 
@@ -55,7 +56,22 @@ public class PatientDouble {
         System.out.println("Name: " + name);
         System.out.println("Age: " + age);
         System.out.println("Illness: " + illness);
-        System.out.println("Previous Patient: " + previousPatientDouble.name);
+        if (this.previousPatientDouble != null)
+        {
+            System.out.println("Previous Patient: " + previousPatientDouble.name);
+        }
+        else
+        {
+            System.out.println("Previous Patient: null");
+        }
+        if (this.nextPatientDouble != null)
+        {
+            System.out.println("Next Patient: " + nextPatientDouble.name);
+        }
+        else
+        {
+            System.out.println("Next Patient: null");
+        }
         System.out.println();
         if (this.nextPatientDouble != null)
         {

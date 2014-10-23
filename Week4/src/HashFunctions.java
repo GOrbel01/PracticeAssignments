@@ -3,7 +3,7 @@
  */
 public class HashFunctions {
 
-    void shortHash(int i);
+//    void shortHash(int i);
 
 
 

@@ -13,9 +13,9 @@ public class HashUtilities {
 
     }
 
-    public int shortHash()
-    {
-
-    }
+//    public int shortHash()
+//    {
+//
+//    }
 
 }
