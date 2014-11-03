@@ -103,15 +103,19 @@ public class TreeIntSet implements IntSet{
     {
         if (this.left == null && this.right == null)
         {
-            return this.left.toString() + ", " + this.right.toString();
+            return ", " + this.value;
         }
-        else if (this.left == null && this.right != null)
+        if (this.left == null && this.right != null)
         {
-            return ", " + this.right.toString();
+            return ", " + this.right.value + this.right.toString();
         }
-        else if (this.left != null && this.right == null)
+        if (this.left != null && this.right == null)
         {
-            return ", " + this.left.toString();
+            return ", " + this.left.value + this.left.toString();
+        }
+        if (this.left != null && this.right != null)
+        {
+            return this.left.toString() + this.left.value + ", " + this.right.toString() + ", " + this.right.value;
         }
         else
         {
