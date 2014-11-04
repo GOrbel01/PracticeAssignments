@@ -6,6 +6,11 @@ public class GenericObject<T> {
     private GenericObject next;
     private GenericObject previous;
 
+    public GenericObject()
+    {
+
+    }
+
     public GenericObject(T value)
     {
         this.value = value;
@@ -18,8 +23,23 @@ public class GenericObject<T> {
         return next;
     }
 
+    public void setNext(GenericObject next)
+    {
+        this.next = next;
+    }
+
     public GenericObject getPrevious()
     {
         return previous;
+    }
+
+    public void setPrevious(GenericObject prev)
+    {
+        this.previous = prev;
+    }
+
+    public T getValue()
+    {
+        return value;
     }
 }

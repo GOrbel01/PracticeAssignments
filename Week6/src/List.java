@@ -3,9 +3,11 @@
  */
 public interface List<T> {
 
-    void add(T object);
+    GenericObject add(T object);
 
     void remove(int index);
 
     int size();
+
+    GenericObject getListEnd();
 }
