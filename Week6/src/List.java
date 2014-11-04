@@ -9,5 +9,8 @@ public interface List<T> {
 
     int size();
 
+    GenericObject get(int index);
+
     GenericObject getListEnd();
+
 }

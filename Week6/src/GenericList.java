@@ -98,6 +98,26 @@ public class GenericList<T> implements List<T> {
         return count;
     }
 
+    public GenericObject get(int index)
+    {
+        boolean isDone = false;
+        int count = 0;
+        GenericObject point = first;
+        while(!isDone)
+        {
+            if(index == count)
+            {
+                isDone = true;
+            }
+            else
+            {
+                count++;
+                point = point.getNext();
+            }
+        }
+        return point;
+    }
+
     public GenericObject getFirst()
     {
         return first;

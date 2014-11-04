@@ -13,18 +13,32 @@ public class Company {
     {
         GenericList<String> nameList = new GenericList<String>();
         GenericList<Integer> niNumberList = new GenericList<Integer>();
+        GenericList<Character> charList = new GenericList<Character>();
+
+        Character zidane = new Character("Zidane", 150, 10);
+        Character squall = new Character("Squall", 200, 4);
+        Character cloud = new Character("Cloud", 180, 5);
 
         nameList.add("Bill");
         nameList.add("Ben");
         nameList.add("James");
         nameList.add("Tom");
+        nameList.add("Iain");
+        nameList.add("Jacob");
+
+        charList.add(zidane);
+        charList.add(squall);
+        charList.add(cloud);
+
+        Character first = (Character) charList.getFirst().getValue();
+        System.out.println(first.getName());
 
         nameList.printBackToFront();
 
         niNumberList.add(223453);
         niNumberList.add(444555);
 
-        nameList.remove(1);
+        System.out.println(nameList.get(2).getValue());
 
         nameList.printBackToFront();
 

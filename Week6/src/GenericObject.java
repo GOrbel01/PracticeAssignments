@@ -3,6 +3,8 @@
  */
 public class GenericObject<T> {
     private T value;
+    private T secondValue;
+    private T thirdValue;
     private GenericObject next;
     private GenericObject previous;
 
@@ -16,6 +18,13 @@ public class GenericObject<T> {
         this.value = value;
         this.next = null;
         this.previous = null;
+    }
+
+    public GenericObject(T value, T secondValue, T thirdValue)
+    {
+        this.value = value;
+        this.secondValue = secondValue;
+        this.thirdValue = thirdValue;
     }
 
     public GenericObject getNext()
@@ -41,5 +50,15 @@ public class GenericObject<T> {
     public T getValue()
     {
         return value;
+    }
+
+    public T getSecondValue()
+    {
+        return secondValue;
+    }
+
+    public T getThirdValue()
+    {
+        return thirdValue;
     }
 }
