@@ -3,33 +3,47 @@
  */
 public class IntegerStack implements IntegerStackInterface
 {
-
         private IntStackNode head;
 
         public void push(int newNodeValue)
         {
-            if (head.getNext() == null)
+            IntStackNode newNode = new IntStackNode(newNodeValue);
+            if (head != null)
             {
-//                head.setNext()
+                newNode.setNext(head);
+            }
+            head = newNode;
+        }
+
+        public int pop()
+        {
+            if (head == null)
+            {
+                return 0;
+            }
+            int result = head.getValue();
+            head = head.getNext();
+            return result;
+        }
+
+        public int peek()
+        {
+            if (head == null)
+            {
+                return 0;
             }
             else
             {
-
+                return head.getValue();
             }
         }
 
-//        public int pop()
-//        {
-//
-//        }
-//
-//        public int peek()
-//        {
-//
-//        }
-//
-//        public boolean isEmpty()
-//        {
-//
-//        }
+        public boolean isEmpty()
+        {
+            if (head == null)
+            {
+                return true;
+            }
+            return false;
+        }
 }
