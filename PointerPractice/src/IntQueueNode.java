@@ -1,21 +1,21 @@
 /**
- * Created by Squall on 04/11/2014.
+ * Created by Cloud on 04/11/2014.
  */
-public class IntStackNode {
+public class IntQueueNode {
     private int value;
-    private IntStackNode next;
+    private IntQueueNode next;
 
-    public IntStackNode(int newValue)
+    public IntQueueNode(int newValue)
     {
         this.value = newValue;
     }
 
-    public IntStackNode getNext()
+    public IntQueueNode getNext()
     {
         return next;
     }
 
-    public void setNext(IntStackNode next)
+    public void setNext(IntQueueNode next)
     {
         this.next = next;
     }
@@ -24,5 +24,4 @@ public class IntStackNode {
     {
         return value;
     }
-
 }
