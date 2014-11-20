@@ -1,3 +1,0 @@
-I am a Cool String in a Cool File!
-Another Line
-More Stuff Dammit!
